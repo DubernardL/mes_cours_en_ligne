@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="container">
+  <div class="tab d-flex justify-content-between">
+    <button class="tablinks active">Histoire</button>
+    <button class="tablinks active">Géographie</button>
+    <button class="tablinks active">EMC</button>
+  </div>
+
+  <div id="Histoire" class="tabcontent">
+      <% if !@hit_cours.empty? %>
+        <% @hit_cours.each do |c| %>
+          <p><%= c.name %></p>
+        <% end %>
+      <% else %>
+        <p>Pas de cours d'histoire pour le moment !</p>
+      <% end %>
+  </div>
+
+  <div id="Géographie" class="tabcontent not-displayed">
+    <% if !@geo_cours.empty? %>
+      <% @geo_cours.each do |c| %>
+        <p><%= c.name %></p>
+      <% end %>
+    <% else %>
+      <p>Pas de cours de géo pour le moment !</p>
+    <% end %>
+  </div>
+
+  <div id="EMC" class="tabcontent not-displayed">
+    <% if !@emc_cours.empty? %>
+      <% @emc_cours.each do |c| %>
+        <p><%= c.name %></p>
+      <% end %>
+    <% else %>
+      <p>Pas de cours d'EMC pour le moment !</p>
+    <% end %>
+  </div>
+
+</div>

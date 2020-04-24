@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users, only: [:index, :new, :create, :edit, :destroy]
+  resources :cours, only: [:index, :new, :create]
 end
