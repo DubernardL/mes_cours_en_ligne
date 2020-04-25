@@ -10,6 +10,7 @@
       <% if !@hit_cours.empty? %>
         <% @hit_cours.each do |c| %>
           <p><%= c.name %></p>
+          <%= link_to "télécharger", download_path(c.file), target: "_blank" %>
         <% end %>
       <% else %>
         <p>Pas de cours d'histoire pour le moment !</p>
@@ -20,6 +21,7 @@
     <% if !@geo_cours.empty? %>
       <% @geo_cours.each do |c| %>
         <p><%= c.name %></p>
+        <%= link_to "télécharger", download_path(c.file), target: "_blank" %>
       <% end %>
     <% else %>
       <p>Pas de cours de géo pour le moment !</p>
@@ -30,10 +32,13 @@
     <% if !@emc_cours.empty? %>
       <% @emc_cours.each do |c| %>
         <p><%= c.name %></p>
+        <%= link_to "télécharger", download_path(c.file), target: "_blank" %>
       <% end %>
     <% else %>
       <p>Pas de cours d'EMC pour le moment !</p>
     <% end %>
   </div>
+
+  <%= button_to "Créer un nouveau cours", new_cour_path, method: :get, class: "btn btn-secondary" %>
 
 </div>

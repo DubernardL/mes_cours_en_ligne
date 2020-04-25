@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_121113) do
 
   create_table "cours", force: :cascade do |t|
     t.string "name"
+    t.string "file"
     t.text "description"
     t.text "category"
     t.datetime "created_at", precision: 6, null: false
