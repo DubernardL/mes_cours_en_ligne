@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   get 'download/:file', to: "cours#download", as: 'download'
   resources :cours
+
+  get 'authorization', to: "cours_users#authorization", as: 'authorization'
+  resources :cours_users, only: [:index]
 end

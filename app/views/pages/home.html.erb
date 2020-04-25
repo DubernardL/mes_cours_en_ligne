@@ -6,7 +6,9 @@
     <%= button_to "Les cours", cours_path, method: :get, class: "btn btn-secondary" %>
   <% end %>
 
-  <div></div>
+  <% if user_signed_in? %>
+    <%= button_to "Gestion des cours", authorization_path, method: :get, class: "btn btn-secondary" %>
+  <% end %>
 
   <% if user_signed_in? %>
     <%= button_to "Gestion des utilisateurs", users_path, method: :get, class: "btn btn-secondary" %>

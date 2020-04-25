@@ -2,43 +2,55 @@
   <div class="container">
   <div class="tab d-flex justify-content-between">
     <button class="tablinks active">Histoire</button>
-    <button class="tablinks active">Géographie</button>
-    <button class="tablinks active">EMC</button>
+    <button class="tablinks">Géographie</button>
+    <button class="tablinks">EMC</button>
   </div>
 
-  <div id="Histoire" class="tabcontent">
-      <% if !@hit_cours.empty? %>
+  <div id="Histoire" class="tabcontent not-displayed rounded">
+    <h2>Histoire</h2>
+    <% if !@hit_cours.empty? %>
+      <ul class="list-group">
         <% @hit_cours.each do |c| %>
-          <p><%= c.name %></p>
-          <%= link_to "télécharger", download_path(c.file), target: "_blank" %>
+          <%= link_to cour_path(c.id), class:'cours-link' do %>
+            <li class="list-group-item"><%= c.name %></li>
+          <% end %>
         <% end %>
-      <% else %>
-        <p>Pas de cours d'histoire pour le moment !</p>
-      <% end %>
+      </ul>
+    <% else %>
+      <p>Pas de cours d'histoire pour le moment !</p>
+    <% end %>
   </div>
 
-  <div id="Géographie" class="tabcontent not-displayed">
+  <div id="Géographie" class="tabcontent not-displayed rounded">
+    <h2>Géographie</h2>
     <% if !@geo_cours.empty? %>
-      <% @geo_cours.each do |c| %>
-        <p><%= c.name %></p>
-        <%= link_to "télécharger", download_path(c.file), target: "_blank" %>
-      <% end %>
+      <ul class="list-group">
+        <% @geo_cours.each do |c| %>
+          <%= link_to cour_path(c.id), class:'cours-link' do %>
+            <li class="list-group-item"><%= c.name %></li>
+          <% end %>
+        <% end %>
+      </ul>
     <% else %>
       <p>Pas de cours de géo pour le moment !</p>
     <% end %>
   </div>
 
-  <div id="EMC" class="tabcontent not-displayed">
+  <div id="EMC" class="tabcontent not-displayed rounded">
+    <h2>EMC</h2>
     <% if !@emc_cours.empty? %>
-      <% @emc_cours.each do |c| %>
-        <p><%= c.name %></p>
-        <%= link_to "télécharger", download_path(c.file), target: "_blank" %>
-      <% end %>
+      <ul class="list-group">
+        <% @emc_cours.each do |c| %>
+          <%= link_to cour_path(c.id), class:'cours-link' do %>
+            <li class="list-group-item"><%= c.name %></li>
+          <% end %>
+        <% end %>
+      </ul>
     <% else %>
       <p>Pas de cours d'EMC pour le moment !</p>
     <% end %>
   </div>
 
-  <%= button_to "Créer un nouveau cours", new_cour_path, method: :get, class: "btn btn-secondary" %>
+  <%= button_to "Créer un cours", new_cour_path, method: :get, class: "btn btn-secondary" %>
 
 </div>

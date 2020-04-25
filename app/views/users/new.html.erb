@@ -6,7 +6,8 @@
       <%= f.input :username,
                   required: true,
                   input_html: { autocomplete: "username" }%>
-      <%= f.input :status, label:"Statut", collection: ["Admin", "Prof", "Elève"] %>
+      <%= f.input :status, label:"Statut", collection: ["Admin", "Prof", "Elève"], required: true %>
+      <%= f.input :level, label:"Niveau", collection: ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale", "All"], required: true %>
       <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

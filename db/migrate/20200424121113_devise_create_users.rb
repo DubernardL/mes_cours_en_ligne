@@ -10,6 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # ADDED
       t.string :username
       t.string :status
+      t.string :level
 
       ## Recoverable
       t.string   :reset_password_token

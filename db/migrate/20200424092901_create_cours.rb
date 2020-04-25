@@ -5,6 +5,7 @@ class CreateCours < ActiveRecord::Migration[6.0]
       t.string :file
       t.text :description
       t.text :category
+      t.text :level
 
       t.timestamps
     end
