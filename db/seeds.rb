@@ -3,6 +3,7 @@ puts "Destroying seed !!!"
 puts "==========================="
 User.destroy_all
 Cour.destroy_all
+CoursUser.destroy_all
 puts "==========================="
 puts "Seed destroyed !!!"
 puts "==========================="
@@ -24,7 +25,7 @@ puts "==========================="
 puts "Creating Cours"
 puts "==========================="
 
-cours1 = Cour.new(name:"Chapitre 1 : la guerre", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis optio iure vero labore, reiciendis voluptate ducimus impedit, porro deleniti, eum recusandae ad incidunt ratione facilis, qui repellendus ipsa et.", category:"Histoire", level:"6ème")
+cours1 = Cour.new(name:"Chapitre 1 : la guerre", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis optio iure vero labore, reiciendis voluptate ducimus impedit, porro deleniti, eum recusandae ad incidunt ratione facilis, qui repellendus ipsa et.", category:"Histoire", level:"2nd")
 cours1.file = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/Cours-1A_SIx2.pdf").open
 cours1.save!
 
@@ -35,6 +36,22 @@ cours2.save!
 cours3 = Cour.new(name:"Chapitre 1 : les déserts", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis optio iure vero labore, reiciendis voluptate ducimus impedit, porro deleniti, eum recusandae ad incidunt ratione facilis, qui repellendus ipsa et.", category:"Géographie", level:"2nd")
 cours3.file = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/Cours-1A_SIx2.pdf").open
 cours3.save!
+
+cours4 = Cour.new(name:"Chapitre 10 : React", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis optio iure vero labore, reiciendis voluptate ducimus impedit, porro deleniti, eum recusandae ad incidunt ratione facilis, qui repellendus ipsa et.", category:"EMC", level:"2nd")
+cours4.file = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/Cours-1A_SIx2.pdf").open
+cours4.save!
+
+puts "==========================="
+puts "Creating CoursUser"
+puts "==========================="
+
+cours_user1 = CoursUser.new(user: user2, cour: cours3)
+cours_user2 = CoursUser.new(user: user2, cour: cours1)
+cours_user3 = CoursUser.new(user: user3, cour: cours2)
+
+cours_user1.save!
+cours_user2.save!
+cours_user3.save!
 
 puts "==========================="
 puts "OK OK OK !!!"

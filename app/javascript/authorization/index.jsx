@@ -12,10 +12,13 @@ import Authorization from './components/authorization';
 // reducers
 import coursReducer from './reducers/cours_reducer';
 import usersReducer from './reducers/users_reducer';
+import userCoursReducer from './reducers/user_cours_reducer';
+
 
 const reducers = combineReducers({
   cours: coursReducer,
-  users: usersReducer
+  users: usersReducer,
+  user_cours: userCoursReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
