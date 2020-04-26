@@ -1,28 +1,5 @@
 <div class="container">
-  <h1>Authorisations</h1>
-
-  <label for="user-select">Choisir un utilisateur:</label>
-
-  <select name="users" id="user-select">
-    <option value="">--Choisir une classe--</option>
-    <% @users.each do |user| %>
-      <option value="<%= user.username %>"><%= user.username %></option>
-    <% end %>
-  </select>
-
-  <div class="row">
-
-    <ul class="aut-side col">
-      <% @users %>
-      <h3></h3>
-      <li class="list-cours"></li>
-    </ul>
-
-    <ul class="aut-side col">
-      <h3></h3>
-      <li class="list-cours"></li>
-    </ul>
-
-  </div>
-
+  <div id="react-autho"></div>
 </div>
+
+<%= javascript_pack_tag 'authorization' %>

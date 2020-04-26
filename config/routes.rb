@@ -9,4 +9,12 @@ Rails.application.routes.draw do
 
   get 'authorization', to: "cours_users#authorization", as: 'authorization'
   resources :cours_users, only: [:index]
+
+  # API routing
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :cours, only: [ :index ]
+      resources :users, only: [ :index ]
+    end
+  end
 end

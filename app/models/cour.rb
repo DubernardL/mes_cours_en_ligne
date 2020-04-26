@@ -8,7 +8,7 @@ class Cour < ApplicationRecord
   @categories = ["Histoire", "Géographie", "EMC"]
   validates :category, presence: true, inclusion: { in: @categories }
 
-  @levels = ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale"]
+  @levels = ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale", "All"]
   validates :level, presence: true, inclusion: { in: @levels }
 
   validates :name, presence: true

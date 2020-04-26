@@ -4,14 +4,14 @@
 
     <div class="form-inputs">
       <%= f.input :category, label:"Matière", collection: ["Histoire", "Géographie", "EMC"] %>
-      <%= f.input :name,  required: true %>
-      <%= f.input :level,  required: true %>
-      <%= f.input :file, as: :file %>
+      <%= f.input :name, label:"Titre", required: true %>
+      <%= f.input :level, label:"Niveau", collection: ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale", "All"], required: true %>
+      <%= f.input :file, label:"Cours", as: :file %>
       <%= f.input :description %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Mettre à jour" %>
+      <%= f.button :submit, "Créer" %>
     </div>
   <% end %>
 </div>
