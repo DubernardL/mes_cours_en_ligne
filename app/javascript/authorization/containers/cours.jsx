@@ -4,8 +4,21 @@ import { connect } from 'react-redux';
 
 // Actions
 import { setCours } from '../actions';
+import { createUserCours } from '../actions';
 
 class Cours extends Component {
+
+  createUserCours() {
+    const cours_selector = document.querySelector('.cours-link');
+    const cours_id = cours_selector.attributes.value.value;
+
+    const user_selector = document.querySelector('.user-selector');
+    const user_id = JSON.parse(user_selector.options[user_selector.options.selectedIndex].value).id;
+
+    const body = { user_id: user_id, cour_id: parseInt(cours_id) };
+
+    createUserCours(body);
+  }
 
   render() {
     return(
@@ -29,7 +42,8 @@ class Cours extends Component {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      setCours: setCours
+      setCours: setCours,
+      createUserCours: createUserCours
     },
     dispatch
   );

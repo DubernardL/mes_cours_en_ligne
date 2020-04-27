@@ -63,20 +63,17 @@ export async function getCoursFromUserCours(arr_id) {
   return user_cours;
 }
 
-export async function createUserCours(body) {
-  console.log(body);
-  const response = await fetch('/api/v1/cours_users', {
+export function createUserCours(user_cours) {
+  const request = fetch('/api/v1/cours_users', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'same-origin',
-    body: JSON.stringify(body)
-  });
-
-  const data = await response.json();
-  console.log(data);
-
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(user_cours)
+  }).then(response => response.json())
+  console.log(request);
   return {
-    type: "SET_USER_COURS",
-    payload: data
+    type: 'USER_COURS_CREATED',
+    payload: request
   }
 }
