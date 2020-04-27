@@ -5,8 +5,8 @@ class Api::V1::CoursUsersController < ActionController::Base
   end
 
   def create
-    @cours = CoursUser.create(cours_user_params)
-    render json: @cours
+    @cours_user = CoursUser.create(cours_user_params)
+    render json: @cours_user
   end
 
   private

@@ -68,10 +68,15 @@ export async function createUserCours(body) {
   const response = await fetch('/api/v1/cours_users', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
+    credentials: 'same-origin',
     body: JSON.stringify(body)
   });
 
   const data = await response.json();
   console.log(data);
-  return data;
+
+  return {
+    type: "SET_USER_COURS",
+    payload: data
+  }
 }
