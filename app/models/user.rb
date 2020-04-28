@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :cours_users, dependent: :destroy
 
+  has_many :cours, through: :cours_users
+
   validates :username, presence: true, uniqueness: true
 
   @status = ["Admin", "Prof", "Elève"]

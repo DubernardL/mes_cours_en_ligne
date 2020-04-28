@@ -1,0 +1,71 @@
+/* Style the tab */
+.tab {
+  margin-bottom: 30px;
+  justify-content: space-between !important;
+}
+
+.tablinks {
+  border-radius: 5px;
+  padding: 40px 0;
+  color: white !important;
+  font-size: 25px;
+  font-weight: bold;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab .histoire {
+  // border: 2px solid #ef3b3b;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2016/08/15/08/22/greece-1594689_960_720.jpg);
+}
+
+.tab .geo {
+  // border: 2px solid #95ce6f;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.pixabay.com/photo/2018/03/25/19/59/map-3260506_960_720.jpg);
+}
+
+.tab .emc {
+  // border: 2px solid #f78945;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.interieur.gouv.fr/var/miomcti/storage/images/www.interieur.gouv.fr/version-fre/elections/comment-voter/15819-9-fre-FR/Comment-voter_largeur_760.jpg);
+}
+
+/* Create an active/current "tab button" class */
+.histoire.active {
+  border-bottom: 5px solid red;
+}
+
+.geo.active {
+  border-bottom: 5px solid #95ce6f;
+}
+
+.emc.active {
+  border-bottom: 5px solid orange;
+}
+
+.tab button {
+  // display: block;
+  width: 250px;
+  color: black;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+/* Style the tab content */
+.tabcontent {
+  // float: left;
+  padding: 0px 12px !important;
+  // border: 1px solid #ccc;
+  width: 100%;
+  border-left: none;
+  // height: 300px;
+}
+
+.not-displayed {
+  // display: none;
+}

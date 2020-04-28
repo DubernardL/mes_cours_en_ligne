@@ -1,8 +1,22 @@
 <div class="container">
-  <h1><%= @cours.name %></h1>
-  <p>Niveau : <%= @cours.level %></p>
-  <p><%= @cours.description %></p>
-  <%= link_to "télécharger", download_path(@cours.file), target: "_blank" %>
+  <h3 class="matiere"><%= @cours.category %></h3>
 
-  <%= link_to "Modifier", edit_cour_path(params[:id]) %>
+  <h1 class="bloc-cours title"><%= @cours.name %></h1>
+
+  <div class="bloc-cours download">
+    <h3>Le cours :</h3>
+    <%= link_to download_path(@cours.file), target: "_blank", class:'file' do %>
+      <i class="fas fa-file-download file-img"></i>
+      <p><%= @cours.name %></p>
+    <% end %>
+  </div>
+
+  <div class="bloc-cours description">
+    <h3>Informations : </h3>
+    <p><%= @cours.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum quis ab unde vero dignissimos dicta, nemo eos. Laborum ab, corporis, quas omnis dolorum repellendus voluptates cumque corrupti fugiat possimus, eum!</p>
+  </div>
+
+  <div class="btn-center">
+    <%= link_to "Modifier", edit_cour_path(params[:id]), class:'btn btn-secondary' %>
+  </div>
 </div>

@@ -1,6 +1,7 @@
 class Cour < ApplicationRecord
 
   has_many :cours_users, dependent: :destroy
+  has_many :users, through: :cours_users
 
   # Carrierwave
   mount_uploader :file, FileUploader
