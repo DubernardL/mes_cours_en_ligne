@@ -1,11 +1,27 @@
 class CoursController < ApplicationController
   def index
-    @hit_cours = Cour.where(category: "Histoire")
+    @hist_cours = Cour.where(category: "Histoire")
+    @level_hist = []
+    @hist_cours.each do |cours|
+      if !@level_hist.include?(cours.level)
+        @level_hist << cours.level
+      end
+    end
     @geo_cours = Cour.where(category: "Géographie")
+    @level_geo = []
+    @geo_cours.each do |cours_geo|
+      if !@level_geo.include?(cours_geo.level)
+        @level_geo << cours_geo.level
+      end
+    end
     @emc_cours = Cour.where(category: "EMC")
-    authorize @hit_cours
-    authorize @geo_cours
-    authorize @emc_cours
+    @level_emc = []
+    @emc_cours.each do |cours_emc|
+      if !@level_emc.include?(cours_emc.level)
+        @level_emc << cours_emc.level
+      end
+    end
+    authorize(:cour)
   end
 
   def show
