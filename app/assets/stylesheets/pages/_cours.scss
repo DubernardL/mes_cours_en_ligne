@@ -10,7 +10,12 @@
 }
 
 .cours-link {
-  text-decoration: none;
+  text-decoration: none !important;
+  color: black;
+}
+
+.cours-link:hover {
+  text-decoration: none !important;
   color: black;
 }
 
@@ -34,10 +39,6 @@
 
 .matiere {
   opacity: .6;
-}
-
-.title {
-  text-decoration: underline;
 }
 
 .download p {

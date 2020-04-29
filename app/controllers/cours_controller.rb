@@ -78,6 +78,6 @@ class CoursController < ApplicationController
   private
 
   def cours_params
-    params.require(:cour).permit(:name, :description, :category, :level, :file)
+    params.require(:cour).permit(:name, :description, :category, :level, :file, :img)
   end
 end

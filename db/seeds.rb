@@ -29,18 +29,22 @@ puts "==========================="
 
 cours1 = Cour.new(name:"Chapitre 1 : la guerre", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis optio iure vero labore, reiciendis voluptate ducimus impedit, porro deleniti, eum recusandae ad incidunt ratione facilis, qui repellendus ipsa et.", category:"Histoire", level:"2nd")
 cours1.file = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/Cours-1A_SIx2.pdf").open
+cours1.img = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/books.jpg").open
 cours1.save!
 
 cours2 = Cour.new(name:"Chapitre 2 : l'amour", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis optio iure vero labore, reiciendis voluptate ducimus impedit, porro deleniti, eum recusandae ad incidunt ratione facilis, qui repellendus ipsa et.", category:"Histoire", level:"Terminale")
 cours2.file = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/Cours-1A_SIx2.pdf").open
+cours2.img = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/books.jpg").open
 cours2.save!
 
 cours3 = Cour.new(name:"Chapitre 1 : les déserts", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis optio iure vero labore, reiciendis voluptate ducimus impedit, porro deleniti, eum recusandae ad incidunt ratione facilis, qui repellendus ipsa et.", category:"Géographie", level:"2nd")
 cours3.file = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/Cours-1A_SIx2.pdf").open
+cours3.img = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/books.jpg").open
 cours3.save!
 
 cours4 = Cour.new(name:"Chapitre 10 : React", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis optio iure vero labore, reiciendis voluptate ducimus impedit, porro deleniti, eum recusandae ad incidunt ratione facilis, qui repellendus ipsa et.", category:"EMC", level:"2nd")
 cours4.file = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/Cours-1A_SIx2.pdf").open
+cours4.img = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/books.jpg").open
 cours4.save!
 
 puts "==========================="

@@ -26,15 +26,20 @@
 
               <div id="collapse-HIST-<%= level %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordionHIST">
                 <div class="card-body">
-                  <ul class="list-group">
                     <% @hist_cours.each do |c| %>
                       <% if c.level === level %>
                         <%= link_to cour_path(c.id), class:'cours-link' do %>
-                          <li class="list-group-item"><%= c.name %></li>
+
+                            <div class="card-product">
+                              <img src="<%= c.img %>" />
+                              <div class="card-product-infos">
+                                <h2><%= c.name %></h2>
+                              </div>
+                            </div>
+
                         <% end %>
                       <% end %>
                     <% end %>
-                  </ul>
                 </div>
               </div>
             </div>
@@ -66,15 +71,18 @@
 
               <div id="collapse-GEO-<%= level %>" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionGEO">
                 <div class="card-body">
-                  <ul class="list-group">
-                    <% @geo_cours.each do |c| %>
-                      <% if c.level === level %>
-                        <%= link_to cour_path(c.id), class:'cours-link' do %>
-                          <li class="list-group-item"><%= c.name %></li>
-                        <% end %>
+                  <% @geo_cours.each do |c| %>
+                    <% if c.level === level %>
+                      <%= link_to cour_path(c.id), class:'cours-link' do %>
+                        <div class="card-product">
+                          <img src="<%= c.img %>" />
+                          <div class="card-product-infos">
+                            <h2><%= c.name %></h2>
+                          </div>
+                        </div>
                       <% end %>
                     <% end %>
-                  </ul>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -106,15 +114,18 @@
 
               <div id="collapse-EMC-<%= level %>" class="collapse" aria-labelledby="headingThree" data-parent="#accordionEMC">
                 <div class="card-body">
-                  <ul class="list-group">
-                    <% @emc_cours.each do |c| %>
-                      <% if c.level === level %>
-                        <%= link_to cour_path(c.id), class:'cours-link' do %>
-                          <li class="list-group-item"><%= c.name %></li>
-                        <% end %>
+                  <% @emc_cours.each do |c| %>
+                    <% if c.level === level %>
+                      <%= link_to cour_path(c.id), class:'cours-link' do %>
+                        <div class="card-product">
+                          <img src="<%= c.img %>" />
+                          <div class="card-product-infos">
+                            <h2><%= c.name %></h2>
+                          </div>
+                        </div>
                       <% end %>
                     <% end %>
-                  </ul>
+                  <% end %>
                 </div>
               </div>
             </div>

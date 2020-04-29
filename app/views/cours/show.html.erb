@@ -22,10 +22,15 @@
       </div>
   <!-- MODAL DELET FINISH -->
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cours.img %>);">
+  <div class="container">
+    <h1><%= @cours.name %></h1>
+  </div>
+</div>
+
+
 <div class="container">
   <h3 class="matiere"><%= @cours.category %></h3>
-
-  <h1 class="bloc-cours title"><%= @cours.name %></h1>
 
   <div class="bloc-cours download">
     <h3>Le cours :</h3>

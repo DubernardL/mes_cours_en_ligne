@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_131914) do
   create_table "cours", force: :cascade do |t|
     t.string "name"
     t.string "file"
+    t.string "img"
     t.text "description"
     t.text "category"
     t.text "level"
