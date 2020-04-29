@@ -47,7 +47,7 @@
   font-size: 40px;
 }
 
-.file {
+.cours-file {
   display: flex;
   align-items: center;
   color: black;
@@ -58,8 +58,13 @@
   margin-left: 5px;
 }
 
-.file:hover {
+.cours-file:hover {
   text-decoration: none;
   opacity: .8;
   color: black;
+}
+
+.btn-cours {
+  display: flex;
+  justify-content: center;
 }

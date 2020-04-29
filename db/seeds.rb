@@ -16,10 +16,12 @@ puts "==========================="
 user1 = User.new(username:"Lucas", status:"Admin", password:"azerty", level:"All")
 user2 = User.new(username:"olili", status:"Elève", level:"2nd", password:"azerty")
 user3 = User.new(username:"bibi", status:"Elève", level:"Terminale", password:"azerty")
+user4 = User.new(username:"ben", status:"Prof", level:"All", password:"azerty")
 
 user1.save!
 user2.save!
 user3.save!
+user4.save!
 
 puts "==========================="
 puts "Creating Cours"

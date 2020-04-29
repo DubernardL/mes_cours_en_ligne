@@ -4,12 +4,11 @@ class CoursUsersController < ApplicationController
     @hit_cours = cours.where(category: "Histoire")
     @geo_cours = cours.where(category: "Géographie")
     @emc_cours = cours.where(category: "EMC")
+    authorize(:cour_user)
   end
 
   def authorization
     @users = User.where(status: 'Elève')
-    # @cours_level = Cour.where(level: olili.level)
-    # @cours_user = CoursUser.where(user_id: olili.id)
   end
 
   def create(user, cours)

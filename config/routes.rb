@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get 'contact', to: "pages#contact", as: 'contact'
+
   resources :users, only: [:index, :new, :create, :destroy]
 
   get 'download/:file', to: "cours#download", as: 'download'
