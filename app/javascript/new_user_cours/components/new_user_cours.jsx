@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Form from '../containers/form';
 
-const Authorization = (props) => {
+const NewUserCours = (props) => {
   return (
     <div>
       <Form />
@@ -9,4 +9,4 @@ const Authorization = (props) => {
   );
 };
 
-export default Authorization;
+export default NewUserCours;

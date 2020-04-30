@@ -7,10 +7,8 @@ class CoursUsersController < ApplicationController
     authorize(:cour_user)
   end
 
-  def authorization
+  def new
     @users = User.where(status: 'Elève')
-  end
-
-  def create(user, cours)
+    authorize(:cour_user)
   end
 end

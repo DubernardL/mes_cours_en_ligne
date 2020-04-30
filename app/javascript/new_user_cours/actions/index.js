@@ -64,16 +64,17 @@ export async function getCoursFromUserCours(arr_id) {
 }
 
 export function createUserCours(user_cours) {
-  const request = fetch('/api/v1/cours_users', {
+  const body = { user_cours }
+  const promise = fetch('/api/v1/cours_users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(user_cours)
+    body: JSON.stringify(body)
   }).then(response => response.json())
-  console.log(request);
+
   return {
     type: 'USER_COURS_CREATED',
-    payload: request
+    payload: promise
   }
 }

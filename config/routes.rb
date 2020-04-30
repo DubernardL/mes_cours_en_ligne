@@ -10,15 +10,14 @@ Rails.application.routes.draw do
   get 'download/:file', to: "cours#download", as: 'download'
   resources :cours
 
-  get 'authorization', to: "cours_users#authorization", as: 'authorization'
-  resources :cours_users, only: [:index]
+  resources :cours_users, only: [:index, :new]
 
   # API routing
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :cours, only: [ :index ]
       resources :users, only: [ :index ]
-      resources :cours_users, only: [ :index, :create ]
+      resources :cours_users, only: [ :index, :new, :create ]
     end
   end
 end

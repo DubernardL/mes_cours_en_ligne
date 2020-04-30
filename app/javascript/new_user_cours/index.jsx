@@ -7,7 +7,7 @@ import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
 
 // components
-import Authorization from './components/authorization';
+import NewUserCours from './components/new_user_cours';
 
 // reducers
 import coursReducer from './reducers/cours_reducer';
@@ -25,7 +25,7 @@ const middlewares = applyMiddleware(reduxPromise, logger);
 
 ReactDOM.render(
   <Provider store={createStore(reducers, {}, middlewares)}>
-    <Authorization />
+    <NewUserCours />
   </Provider>,
   document.getElementById('react-autho')
 );

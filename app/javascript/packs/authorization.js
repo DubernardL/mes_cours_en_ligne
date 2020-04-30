@@ -1,1 +1,1 @@
-import "../authorization";
+import "../new_user_cours";

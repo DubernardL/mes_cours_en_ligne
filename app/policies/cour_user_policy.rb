@@ -6,6 +6,10 @@ class CourUserPolicy < ApplicationPolicy
   end
 
   def index?
-    true
+    user.status === 'Elève'
+  end
+
+  def new?
+    user.status === 'Admin'
   end
 end
