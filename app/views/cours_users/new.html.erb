@@ -1,5 +1,25 @@
 <div class="container">
-  <div id="react-autho"></div>
+  <!-- <div id="react-autho"></div> -->
+
+<%= form_for(@cours_user) do |f| %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.collection_select :user_id, @users, :id, :username, include_blank: true %>
+  </div>
+
+  <div class="cours-dispo">
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+  <div class="cours-user">
+  </div>
+
 </div>
 
-<%= javascript_pack_tag 'authorization' %>
+<%#= javascript_pack_tag 'authorization' %>
