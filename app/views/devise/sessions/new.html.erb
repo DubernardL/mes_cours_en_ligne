@@ -1,44 +1,51 @@
-<div class="container">
-  <div class="btn-center">
-    <h1>Connexion</h1>
-  </div>
-
-  <div class="connection-container row">
-    <div class="container col-sm">
-      <div class="informations">
-        <h3>Cours en ligne</h3>
-        <h4>Mme Lludriguez Olivia</h4>
-        <h5>Les Elèves</h5>
-        <p>Les Elèves pourront retrouver ici les cours que je leur proposent avec des fiches activités et des liens pour compléter les cours.</p>
-        <h5>Les Professeurs</h5>
-        <p>Les professeurs peuvent, eux me contacter pour obtenir un accès et donc avoir tous les cours que je propose.</p>
-        <div class="btn-center">
-          <%= button_to "Me contacter", contact_path, method: :get, class: "btn btn-secondary" %>
-         </div>
+<div class="bg-deconnected">
+  <div class="container">
+    <div class="en-tete">
+      <div class="btn-center">
+        <a href="/"><%= image_tag('logo.png', class:'logo-disconnected') %></a>
       </div>
+
+      <h1 class="title-disconnected">Connexion</h1>
     </div>
 
-    <div class="container col-sm">
-      <div class="connection">
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs">
-            <%= f.input :username,
-                        required: false,
-                        autofocus: true,
-                        input_html: { autocomplete: "username" } %>
-            <%= f.input :password,
-                        required: false,
-                        input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-          </div>
+    <div class="connection-container row">
 
-          <div class="form-actions btn-center">
-            <%= f.button :submit, "Connexion", class:'btn btn-secondary' %>
-          </div>
-        <% end %>
+      <div class="container mb-3 col-sm">
+        <div class="connection">
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-inputs">
+              <%= f.input :username,
+                          required: false,
+                          autofocus: true,
+                          input_html: { autocomplete: "username" } %>
+              <%= f.input :password,
+                          required: false,
+                          input_html: { autocomplete: "current-password" } %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </div>
 
-        <%= render "devise/shared/links" %>
+            <div class="form-actions btn-center">
+              <%= f.button :submit, "Connexion", class:'btn btn-secondary' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="container col-sm">
+        <div class="informations">
+          <h3>Cours en ligne</h3>
+          <h4>Mme Lludriguez Olivia</h4>
+          <h5>Les Elèves</h5>
+          <p>Les Elèves pourront retrouver ici les cours que je leur proposent avec des fiches activités et des liens pour compléter les cours.</p>
+          <h5>Les Professeurs</h5>
+          <p>Les professeurs peuvent, eux me contacter pour obtenir un accès et donc avoir tous les cours que je propose.</p>
+          <div class="btn-center">
+            <%= button_to "Me contacter", contact_path, method: :get, class: "btn btn-secondary" %>
+           </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+

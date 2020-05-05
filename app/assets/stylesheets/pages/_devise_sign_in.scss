@@ -1,14 +1,32 @@
+.bg-deconnected {
+  background: linear-gradient(0deg, #F9F9F9 50%, #2A9CC8 50%);
+}
+
+.en-tete {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-disconnected {
+  width: 150px;
+}
+
+.title-disconnected {
+  text-align: center;
+  flex: 2;
+}
 
 .informations {
-  border-radius: 7px;
-  background-color: #f7f7f7;
+  border-radius: 5px;
+  background-color: white;
   padding: 25px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
 .connection {
-  border-radius: 7px;
-  background-color: #f7f7f7;
+  border-radius: 5px;
+  background-color: white;
   padding: 25px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
 }

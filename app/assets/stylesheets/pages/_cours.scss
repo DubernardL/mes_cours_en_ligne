@@ -1,8 +1,18 @@
 // Index
+.card {
+  background-color: #F9F9F9 !important;
+  border: 1px solid rgba(0,0,0,.125) !important;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
+
 .btn-link {
   text-decoration: none !important;
   color: black !important;
-  opacity: .7 !important;
+}
+
+.card-header {
+  background-color: #F9F9F9 !important;
+  border: none !important;
 }
 
 .cat-link:hover {

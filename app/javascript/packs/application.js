@@ -4,4 +4,3 @@ require("channels")
 
 import "bootstrap";
 import { openCity } from '../components/tab_cat';
-import { userSelection } from './form_new';

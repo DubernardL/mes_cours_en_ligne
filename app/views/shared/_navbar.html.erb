@@ -1,31 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="/"><%= image_tag('logo.png', class:'logo-nav') %></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <% if current_user.status === 'Elève' %>
+      <% if current_user.status === 'Elève' %>
+        <li class="nav-item">
             <%= link_to "Mes cours", cours_users_path, method: :get, class: "nav-link" %>
-        <% end %>
-      </li>
-      <li class="nav-item">
-        <% if current_user.status === 'Admin' || current_user.status === 'Prof' %>
+        </li>
+      <% end %>
+      <% if current_user.status === 'Admin' || current_user.status === 'Prof' %>
+        <li class="nav-item">
           <%= link_to "Les cours", cours_path, method: :get, class: "nav-link" %>
-        <% end %>
-      </li>
-      <li class="nav-item">
-        <% if current_user.status === 'Admin' %>
+        </li>
+      <% end %>
+      <% if current_user.status === 'Admin' %>
+        <li class="nav-item">
           <%= link_to "Gestion des cours", new_cours_user_path, method: :get, class: "nav-link" %>
-        <% end %>
-      </li>
-      <li class="nav-item">
-        <% if current_user.status === 'Admin' %>
+        </li>
+        <li class="nav-item">
           <%= link_to "Gestion des utilisateurs", users_path, method: :get, class: "nav-link" %>
-        <% end %>
-      </li>
-      <li class="nav-item">
+        </li>
+      <% end %>
+
+      <li class="nav-item deconnexion">
           <%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>
       </li>
     </ul>

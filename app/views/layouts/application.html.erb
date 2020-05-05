@@ -15,10 +15,6 @@
   <body>
     <% if user_signed_in? %>
       <%= render 'shared/navbar' %>
-    <% else %>
-      <div class="btn-center">
-        <a href="/"><%= image_tag('logo.png', class:'logo-disconnected') %></a>
-      </div>
     <% end %>
 
     <%= yield %>
