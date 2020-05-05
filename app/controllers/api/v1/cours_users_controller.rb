@@ -4,12 +4,9 @@ class Api::V1::CoursUsersController < ActionController::Base
     render json: @cours
   end
 
-  def new
-  end
-
   def create
-    raise
     @cours_user = CoursUser.create(cours_user_params)
+    raise
     render json: @cours_user
   end
 

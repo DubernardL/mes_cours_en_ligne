@@ -1,1 +1,1 @@
-// import "../new_user_cours";
+import "../new_user_cours";

@@ -29,13 +29,11 @@ class Form extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const user_selector = document.getElementById('list-user');
-    const user_id = parseInt(user_selector[user_selector.selectedIndex].value);
-
+    const user = parseInt(user_selector[user_selector.selectedIndex].value);
     const cous_selector = document.getElementById('checkbox-cours');
-    const cours_id = parseInt(cous_selector.value);
+    const cours = parseInt(cous_selector.value);
 
-    let json = {"user_id":user_id,"cour_id":cours_id};
-    json =
+    const json = {"user":user,"cour":cours};
     this.props.createUserCours(json);
   }
 

@@ -1,25 +1,33 @@
-<div class="container">
-  <h1>Contact</h1>
-  <p>Bonjour, si vous êtes professeur vous pouvez me contacter pour obtenir un accès à mes cours ou pour tout autre renseignement. Merci à vous.</p>
-
-  <form action="https://formspree.io/moqkakyb" method="POST">
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Votre email:</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="name@example.com">
+<div class="bg-deconnected">
+  <div class="container">
+    <div class="en-tete">
+      <div class="btn-center">
+        <a href="/"><%= image_tag('logo.png', class:'logo-disconnected') %></a>
+      </div>
+      <h1 class="title-disconnected">Contact</h1>
     </div>
+  <div class="container">
+    <p>Bonjour, si vous êtes professeur vous pouvez me contacter pour obtenir un accès à mes cours ou pour tout autre renseignement. Merci à vous.</p>
 
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Votre nom:</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" name="nom">
-    </div>
+    <form action="https://formspree.io/moqkakyb" method="POST">
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Votre email:</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" name="mail" placeholder="name@example.com">
+      </div>
 
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Votre message:</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
-    </div>
+      <div class="form-group">
+        <label for="exampleFormControlInput1">Votre nom:</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="nom">
+      </div>
 
-    <div class="btn-center">
-      <button type="submit" class="btn btn-primary">Envoyer</button>
-    </div>
-  </form>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Votre message:</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+      </div>
+
+      <div class="btn-center">
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </div>
+    </form>
+  </div>
 </div>
