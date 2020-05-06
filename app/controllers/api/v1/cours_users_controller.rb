@@ -8,11 +8,13 @@ class Api::V1::CoursUsersController < ActionController::Base
 
   def create
     cours_user = CoursUser.new(cours_user_params)
-    if cours_user.save
-      render json: {status: 'SUCCESS', message: 'CoursUser saved', data: cours_user, status: :ok}
-    else
-      render json: {status: 'ERROR', message: 'CoursUser not saved', data: cours_user.errors, status: :unprocessable_entity}
-    end
+    cours_user.save
+    render json: cours_user
+  end
+
+  def destroy
+    cours_user = CoursUser.find(params[:id])
+    cours_user.destroy
   end
 
   private

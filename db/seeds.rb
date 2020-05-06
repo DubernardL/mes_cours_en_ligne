@@ -47,6 +47,16 @@ cours4.file = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/Cours-1A_SI
 cours4.img = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/books.jpg").open
 cours4.save!
 
+cours5 = Cour.new(name:"Chapitre 12 : JS", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis optio iure vero labore, reiciendis voluptate ducimus impedit, porro deleniti, eum recusandae ad incidunt ratione facilis, qui repellendus ipsa et.", category:"EMC", level:"2nd")
+cours5.file = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/Cours-1A_SIx2.pdf").open
+cours5.img = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/books.jpg").open
+cours5.save!
+
+cours6 = Cour.new(name:"Chapitre 11 : Rails", description:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore blanditiis optio iure vero labore, reiciendis voluptate ducimus impedit, porro deleniti, eum recusandae ad incidunt ratione facilis, qui repellendus ipsa et.", category:"EMC", level:"2nd")
+cours6.file = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/Cours-1A_SIx2.pdf").open
+cours6.img = Pathname.new("#{Rails.root}/public/uploads/cour/file/4/books.jpg").open
+cours6.save!
+
 puts "==========================="
 puts "Creating CoursUser"
 puts "==========================="

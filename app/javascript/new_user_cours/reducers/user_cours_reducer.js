@@ -14,4 +14,10 @@ export default function(state, action) {
   } else {
     return state;
   }
+
+  if (action.type === 'USER_COURS_DELETED') {
+    return action.payload;
+  } else {
+    return state;
+  }
 }
