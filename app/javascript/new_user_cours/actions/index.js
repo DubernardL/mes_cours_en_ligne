@@ -66,14 +66,11 @@ export async function setCours(user_level) {
 
 
 export async function createUserCours(user_cours) {
-  console.log(user_cours);
   const options = {
     method: 'POST',
     headers: {
-      'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    credentials: 'same-origin',
     body: JSON.stringify(user_cours)
   };
 

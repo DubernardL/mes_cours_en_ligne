@@ -33,7 +33,7 @@ class Form extends Component {
     const cous_selector = document.getElementById('checkbox-cours');
     const cours = parseInt(cous_selector.value);
 
-    const json = {"user":user,"cour":cours};
+    const json = {"user_id": user, "cour_id": cours};
     this.props.createUserCours(json);
   }
 

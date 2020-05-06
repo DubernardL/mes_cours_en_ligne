@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // components
 import NewUserCours from './components/new_user_cours';
@@ -25,7 +26,11 @@ const middlewares = applyMiddleware(reduxPromise, logger);
 
 ReactDOM.render(
   <Provider store={createStore(reducers, {}, middlewares)}>
-    <NewUserCours />
+   <BrowserRouter>
+      <Switch>
+        <Route path="/cours_users/new" exact component={NewUserCours} />
+      </Switch>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('react-autho')
 );
