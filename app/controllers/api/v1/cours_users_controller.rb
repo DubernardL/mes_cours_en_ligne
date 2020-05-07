@@ -15,6 +15,7 @@ class Api::V1::CoursUsersController < ActionController::Base
   def destroy
     cours_user = CoursUser.find(params[:id])
     cours_user.destroy
+    render json: cours_user
   end
 
   private

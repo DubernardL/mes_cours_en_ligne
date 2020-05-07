@@ -47,15 +47,21 @@ export async function getCoursFromUserCours(arr_id) {
 export async function setCours(user_level) {
 
   let cours = [];
+  let cours_id_user = [];
 
+  const resp = await fetch('/api/v1/cours_users');
+  const d = await resp.json();
+  for(const c of d) {
+    cours_id_user.push(c.cour_id);
+  }
   const response = await fetch('/api/v1/cours');
   const data = await response.json();
 
-  for (const c of data) {
-    if(c.level === user_level) {
+  data.forEach((c) => {
+    if(c.level === user_level && !cours_id_user.includes(c.id)) {
       cours.push(c);
     }
-  }
+  })
 
   return {
     type: "SET_COURS",

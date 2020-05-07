@@ -1,7 +1,60 @@
-.aut-side {
-  border: 1px solid grey;
+.general-div {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cours-btn {
+  display: flex;
+  justify-content: space-between;
 }
 
 .list-cours {
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+
+.label-radio {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 3px;
+}
+
+.checked {
+  background-color: #2A9CC8;
+}
+
+.form-control {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.add-btn {
+  color: #2A9CC8;
+  font-size: 50px;
+  background-color: transparent;
+  border: none;
+  padding-left: 200px;
+}
+
+.list-cours-user {
   list-style: none;
+  margin-top: 60px;
+  padding-left: 0px;
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+
+.cours-user-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.delete-btn {
+  color: #f93657;
+  font-size: 25px;
+  background-color: transparent;
+  border: none;
 }

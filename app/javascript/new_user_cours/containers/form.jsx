@@ -27,6 +27,12 @@ class Form extends Component {
   changeCheck = (event) => {
     const selector = document.getElementById('checkbox-cours');
     selector.value = event.currentTarget.value;
+
+    const class_selector = document.querySelectorAll(".label-radio");
+    class_selector.forEach((c) => {
+      c.classList.remove('checked');
+    })
+    event.currentTarget.parentElement.classList.add('checked');
   }
 
   handleSubmit = (event) => {
@@ -39,9 +45,10 @@ class Form extends Component {
     const json = {"user_id": user, "cour_id": cours};
 
     this.props.createUserCours(json, () => {
+      this.props.setUserCours(user);
       const selector = document.getElementById('list-user');
-      const user_id = parseInt(selector[selector.selectedIndex].attributes.value.value);
-      this.props.setUserCours(user_id);
+      const user_level = selector[selector.selectedIndex].attributes.level.value;
+      this.props.setCours(user_level);
     });
   }
 
@@ -51,13 +58,17 @@ class Form extends Component {
     const cours_id = parseInt(event.currentTarget.value);
     this.props.deleteUserCours(cours_id, user_id, () => {
       this.props.setUserCours(user_id);
+      const selector = document.getElementById('list-user');
+      const user_level = selector[selector.selectedIndex].attributes.level.value;
+      this.props.setCours(user_level)
     });
   }
 
   render() {
     return (
-      <div>
+      <div className="general-div">
         <form onSubmit={this.handleSubmit}>
+          <label htmlFor='list-user'>Choisir un utilisateur : </label>
           <select id="list-user" onChange={this.handleChange}>
             <option value="">--Choisissez un Utilisateur--</option>
            {
@@ -68,14 +79,15 @@ class Form extends Component {
               })
             }
           </select>
-
-          <div className="d-flex">
-            <div>
+          <br />
+          <div className="cours-btn">
+            <div className="list-cours">
               {
                 this.props.cours.map((c) => {
                   return(
                     <div id="checkbox-cours" value="" key={c.id}>
-                      <label htmlFor={c.id}>{c.name}</label>
+                      <label className="label-radio " htmlFor={c.id}>
+                      {c.name}
                       <input
                         id={c.id}
                         type="radio"
@@ -85,28 +97,28 @@ class Form extends Component {
                         value={c.id}
                         onChange={this.changeCheck}
                       />
+                      </label>
                     </div>
                   )
                 })
               }
             </div>
-
-            <ul>
-              {
-                this.props.user_cours.map((cours) => {
-                  return(
-                    <div key={cours.id} className="d-flex">
-                      <li>{cours.name} //// {cours.id}</li>
-                      <button value={cours.id} onClick={this.deleteCours}>Supprimer</button>
-                    </div>
-                  )
-                })
-              }
-            </ul>
+            <button className="add-btn" type="submit"><i class="far fa-arrow-alt-circle-right"></i></button>
           </div>
-
-          <button type="submit">Send</button>
         </form>
+
+        <ul className="list-cours-user">
+          {
+            this.props.user_cours.map((cours) => {
+              return(
+                <div key={cours.id} className="cours-user-item">
+                  <li>{cours.name}</li>
+                  <button className="delete-btn" value={cours.id} onClick={this.deleteCours}><i class="fas fa-minus-circle"></i></button>
+                </div>
+              )
+            })
+          }
+        </ul>
       </div>
     );
   }
