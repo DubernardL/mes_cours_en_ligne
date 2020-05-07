@@ -92,7 +92,7 @@ class Form extends Component {
                         id={c.id}
                         type="radio"
                         name="cours"
-                        className="form-control"
+                        className="form-control radio-btn"
                         autoComplete="off"
                         value={c.id}
                         onChange={this.changeCheck}

@@ -139,8 +139,10 @@
     </div>
   </div>
 
-  <div class="btn-center">
-    <%= button_to "Créer un cours", new_cour_path, method: :get, class: "btn btn-secondary" %>
-  </div>
+  <% if current_user.status === "Admin" %>
+    <div class="btn-center">
+      <%= button_to "Créer un cours", new_cour_path, method: :get, class: "btn" %>
+    </div>
+  <% end %>
 
 </div>

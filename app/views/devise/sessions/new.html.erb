@@ -1,11 +1,11 @@
 <div class="bg-deconnected">
+
+  <div class="en-tete">
+    <a href="<%= root_path %>"><%= image_tag('logo.png', class:'logo-disconnected') %></a>
+    <h1 class="title-disconnected">Connexion</h1>
+  </div>
+
   <div class="container">
-    <div class="en-tete">
-      <div class="btn-center">
-        <a href="/"><%= image_tag('logo.png', class:'logo-disconnected') %></a>
-      </div>
-      <h1 class="title-disconnected">Connexion</h1>
-    </div>
 
     <div class="connection-container row">
 
@@ -14,17 +14,19 @@
           <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
               <%= f.input :username,
-                          required: false,
+                          label: 'Pseudo',
+                          required: true,
                           autofocus: true,
                           input_html: { autocomplete: "username" } %>
               <%= f.input :password,
-                          required: false,
+                          label: 'Mot de passe',
+                          required: true,
                           input_html: { autocomplete: "current-password" } %>
-              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              <%= f.input :remember_me, label: 'Se souvenir de moi', as: :boolean if devise_mapping.rememberable? %>
             </div>
 
             <div class="form-actions btn-center">
-              <%= f.button :submit, "Connexion", class:'btn btn-secondary' %>
+              <%= f.button :submit, "Connexion", class:'btn' %>
             </div>
           <% end %>
         </div>
@@ -39,7 +41,7 @@
           <h5>Les Professeurs</h5>
           <p>Les professeurs peuvent, eux me contacter pour obtenir un accès et donc avoir tous les cours que je propose.</p>
           <div class="btn-center">
-            <%= button_to "Me contacter", contact_path, method: :get, class: "btn btn-secondary" %>
+            <%= button_to "Me contacter", contact_path, method: :get, class: "btn" %>
            </div>
         </div>
       </div>
