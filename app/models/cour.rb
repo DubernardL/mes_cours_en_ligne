@@ -6,6 +6,7 @@ class Cour < ApplicationRecord
   # Carrierwave
   mount_uploader :file, FileUploader
   mount_uploader :img, ImgUploader
+  mount_uploaders :aditional_files, AdditionalFilesUploader
 
   validates :file, presence: true
   validates :img, presence: true
@@ -17,5 +18,4 @@ class Cour < ApplicationRecord
   validates :level, presence: true, inclusion: { in: @levels }
 
   validates :name, presence: true
-
 end

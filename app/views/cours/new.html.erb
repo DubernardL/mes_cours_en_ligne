@@ -1,6 +1,5 @@
 <div class="container">
   <h1 class="title-tab">Création de cours</h1>
-
   <div class="form-new-cours">
     <%= simple_form_for @cours do |f| %>
       <%= f.error_notification %>
@@ -11,6 +10,8 @@
         <%= f.input :level, label:"Niveau", collection: ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale", "All"], required: true %>
         <%= f.input :file, label:"Cours", as: :file %>
         <%= f.input :img, label:"Image", as: :file %>
+        <%= f.label "Fichiers supplémentaires : "  %>
+        <%= f.file_field :aditional_files, multiple: :true %>
         <%= f.input :description, label:"Informations", as: :text %>
       </div>
 
@@ -23,4 +24,3 @@
   </div>
 
 </div>
-
