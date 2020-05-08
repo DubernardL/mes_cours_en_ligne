@@ -12,7 +12,9 @@
         <%= f.input :img, label:"Image", as: :file %>
         <%= f.label "Fichiers supplémentaires : "  %>
         <%= f.file_field :aditional_files, multiple: :true %>
-        <%= f.input :description, label:"Informations", as: :text %>
+
+        <%= f.input :description, as: :text, label:"Informations" %>
+        <p class="info-link">*Pour ajouter un lien copier cette balise et remplacez les majuscules : &#60;a href="LIEN">TEXT DU LIEN&#60;/a></p>
       </div>
 
       <div class="form-actions">
