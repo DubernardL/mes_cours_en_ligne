@@ -1,18 +1,23 @@
 <div class="container">
-  <%= simple_form_for @cours do |f| %>
-    <%= f.error_notification %>
+  <h1 class="title-tab">Mise à jour de cours</h1>
+  <div class="form-new-cours">
+    <%= simple_form_for @cours do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :category, label:"Matière", collection: ["Histoire", "Géographie", "EMC"] %>
-      <%= f.input :name, label:"Titre", required: true %>
-      <%= f.input :level, label:"Niveau", collection: ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale", "All"], required: true %>
-      <%= f.input :file, label:"Cours", as: :file %>
-      <%= f.input :img, label:"Image", as: :img %>
-      <%= f.input :description %>
-    </div>
+      <div class="form-inputs">
+        <%= f.input :category, label:"Matière", collection: ["Histoire", "Géographie", "EMC"] %>
+        <%= f.input :name, label:"Titre", required: true %>
+        <%= f.input :level, label:"Niveau", collection: ["6ème", "5ème", "4ème", "3ème", "2nd", "1ère", "Terminale", "All"], required: true %>
+        <%= f.input :file, label:"Cours", as: :file %>
+        <%= f.input :img, label:"Image", as: :file %>
+        <%= f.input :description, label:"Informations", as: :text %>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Créer" %>
-    </div>
-  <% end %>
+      <div class="form-actions">
+        <div class="btn-center">
+          <%= f.button :submit, "Mettre à jour" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

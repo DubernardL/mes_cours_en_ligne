@@ -1,0 +1,50 @@
+.site-footer {
+  background-color: #364c54;
+  color: #092533;
+  padding: 40px 40px 0px 40px;
+  font-size:15px;
+  line-height:18px;
+}
+
+.site-footer a {
+  color: #092533;
+  font-weight: bold;
+}
+
+.site-footer a:hover {
+  color: #b8babc;
+  text-decoration: none;
+}
+
+.general-div-footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+// Position du footer
+
+html{
+  height:100%;
+}
+
+body{
+  height:100%;
+  position: relative;
+}
+
+#contenu{
+  min-height:100%;
+  position: relative;
+}
+
+#main{
+  position: relative;
+  padding-bottom: 170px;
+}
+
+footer{
+  height: 140px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}

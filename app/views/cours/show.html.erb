@@ -42,13 +42,15 @@
 
   <div class="bloc-cours description">
     <h3>Informations : </h3>
-    <p><%= @cours.description %></p>
+    <p><%= simple_format(@cours.description) %></p>
   </div>
 
-  <div class="btn-cours">
-    <%= link_to "Modifier", edit_cour_path(params[:id]), class:'btn btn-secondary mr-5' %>
-    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete">
-      Supprimer
-    </button>
-  </div>
+  <% if current_user.status === "Admin" %>
+    <div class="btn-cours">
+      <%= link_to "Modifier", edit_cour_path(params[:id]), class:'btn btn-secondary mr-5' %>
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete">
+        Supprimer
+      </button>
+    </div>
+  <% end %>
 </div>

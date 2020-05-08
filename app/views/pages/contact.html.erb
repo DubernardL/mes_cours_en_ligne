@@ -1,13 +1,14 @@
 <div class="bg-deconnected">
-  <div class="en-tete">
-    <div class="btn-center">
-      <a href="/"><%= image_tag('logo.png', class:'logo-disconnected') %></a>
+    <div class="en-tete">
+      <% if !user_signed_in? %>
+        <div class="btn-center">
+          <a href="/"><%= image_tag('logo.png', class:'logo-disconnected') %></a>
+        </div>
+      <% end %>
+      <h1 class="title-disconnected">Contact</h1>
     </div>
-    <h1 class="title-disconnected">Contact</h1>
-  </div>
   <div class="container">
     <div class="container form-contact">
-      <%= button_to "Connexion", root_path, method: :get, class: "btn mb-3" %>
       <p>Bonjour, si vous êtes professeur vous pouvez me contacter pour obtenir un accès à mes cours ou pour tout autre renseignement. Merci à vous.</p>
 
       <form action="https://formspree.io/moqkakyb" method="POST">

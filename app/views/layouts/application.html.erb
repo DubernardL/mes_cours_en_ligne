@@ -21,13 +21,21 @@
 
   </head>
   <body>
-    <div class="div-flashes"><%= render 'shared/flashes' %></div>
+    <div id="contenu">
+      <div id="main">
+        <div class="div-flashes"><%= render 'shared/flashes' %></div>
 
-    <% if user_signed_in? %>
-      <%= render 'shared/navbar' %>
-    <% end %>
+        <% if user_signed_in? %>
+          <%= render 'shared/navbar' %>
+        <% end %>
 
-    <%= yield %>
+        <%= yield %>
+      </div>
+
+      <%= render 'shared/footer' %>
+
+    </div>
+
 
     <%= javascript_pack_tag 'application' %>
     <!-- Optional JavaScript -->

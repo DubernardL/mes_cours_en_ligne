@@ -15,12 +15,16 @@
           <%= link_to "Les cours", cours_path, method: :get, class: "nav-link" %>
         </li>
       <% end %>
+
       <% if current_user.status === 'Admin' %>
         <li class="nav-item">
           <%= link_to "Gestion des cours", new_cours_user_path, method: :get, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Gestion des utilisateurs", users_path, method: :get, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Contact", contact_path, method: :get, class: "nav-link" %>
         </li>
       <% end %>
 
