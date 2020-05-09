@@ -34,12 +34,21 @@
 .histoire.active {
   border-bottom: 5px solid red;
 }
+.histoire:hover {
+  border-bottom: 5px solid red;
+}
 
 .geo.active {
   border-bottom: 5px solid #95ce6f;
 }
+.geo:hover {
+  border-bottom: 5px solid #95ce6f;
+}
 
 .emc.active {
+  border-bottom: 5px solid orange;
+}
+.emc:hover {
   border-bottom: 5px solid orange;
 }
 

@@ -82,7 +82,7 @@ class Form extends Component {
           <br />
           <div className="cours-btn">
             <div className="list-cours">
-              <h5>Cours disponibles pour ce niveau :</h5>
+              <h5 className="title-aut">Cours disponibles pour ce niveau :</h5>
               {
                 this.props.cours.map((c) => {
                   return(
@@ -109,7 +109,7 @@ class Form extends Component {
         </form>
 
         <ul className="list-cours-user">
-          <h5>Cours autorisés pour l'utilisateur :</h5>
+          <h5 className="title-aut">Cours autorisés pour l'utilisateur :</h5>
           {
             this.props.user_cours.map((cours) => {
               return(
