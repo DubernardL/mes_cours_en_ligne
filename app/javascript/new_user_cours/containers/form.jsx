@@ -21,7 +21,7 @@ class Form extends Component {
     const user_id = parseInt(selector[selector.selectedIndex].attributes.value.value);
 
     this.props.setUserCours(user_id);
-    this.props.setCours(user_level);
+    this.props.setCours(user_level, user_id);
   }
 
   changeCheck = (event) => {
@@ -48,7 +48,8 @@ class Form extends Component {
       this.props.setUserCours(user);
       const selector = document.getElementById('list-user');
       const user_level = selector[selector.selectedIndex].attributes.level.value;
-      this.props.setCours(user_level);
+      const user_id = parseInt(selector[selector.selectedIndex].attributes.value.value);
+      this.props.setCours(user_level, user_id);
     });
   }
 
@@ -60,7 +61,7 @@ class Form extends Component {
       this.props.setUserCours(user_id);
       const selector = document.getElementById('list-user');
       const user_level = selector[selector.selectedIndex].attributes.level.value;
-      this.props.setCours(user_level)
+      this.props.setCours(user_level, user_id)
     });
   }
 
@@ -104,7 +105,7 @@ class Form extends Component {
                 })
               }
             </div>
-            <button className="add-btn" type="submit"><i class="far fa-arrow-alt-circle-right"></i></button>
+            <button className="add-btn" type="submit"><i className="far fa-arrow-alt-circle-right"></i></button>
           </div>
         </form>
 
@@ -115,7 +116,7 @@ class Form extends Component {
               return(
                 <div key={cours.id} className="cours-user-item">
                   <li>{cours.name}</li>
-                  <button className="delete-btn" value={cours.id} onClick={this.deleteCours}><i class="fas fa-minus-circle"></i></button>
+                  <button className="delete-btn" value={cours.id} onClick={this.deleteCours}><i className="fas fa-minus-circle"></i></button>
                 </div>
               )
             })

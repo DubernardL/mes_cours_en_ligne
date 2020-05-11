@@ -8,7 +8,6 @@ class Cour < ApplicationRecord
   mount_uploader :img, ImgUploader
   mount_uploaders :aditional_files, AdditionalFilesUploader
 
-  validates :file, presence: true
   validates :img, presence: true
 
   @categories = ["Histoire", "Géographie", "EMC"]

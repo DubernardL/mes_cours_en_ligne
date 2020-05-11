@@ -1,20 +1,20 @@
 class CoursController < ApplicationController
   def index
-    @hist_cours = Cour.where(category: "Histoire")
+    @hist_cours = Cour.where(category: "Histoire").sort { |a, b| b <=> a }
     @level_hist = []
     @hist_cours.each do |cours|
       if !@level_hist.include?(cours.level)
         @level_hist << cours.level
       end
     end
-    @geo_cours = Cour.where(category: "Géographie")
+    @geo_cours = Cour.where(category: "Géographie").sort { |a, b| b <=> a }
     @level_geo = []
     @geo_cours.each do |cours_geo|
       if !@level_geo.include?(cours_geo.level)
         @level_geo << cours_geo.level
       end
     end
-    @emc_cours = Cour.where(category: "EMC")
+    @emc_cours = Cour.where(category: "EMC").sort { |a, b| b <=> a }
     @level_emc = []
     @emc_cours.each do |cours_emc|
       if !@level_emc.include?(cours_emc.level)

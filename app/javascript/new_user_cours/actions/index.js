@@ -44,16 +44,20 @@ export async function getCoursFromUserCours(arr_id) {
   return user_cours;
 }
 
-export async function setCours(user_level) {
+export async function setCours(user_level, user_id) {
 
   let cours = [];
   let cours_id_user = [];
 
   const resp = await fetch('/api/v1/cours_users');
   const d = await resp.json();
+  console.log(d);
   for(const c of d) {
-    cours_id_user.push(c.cour_id);
+    if (c.user_id === user_id) {
+      cours_id_user.push(c.cour_id);
+    }
   }
+
   const response = await fetch('/api/v1/cours');
   const data = await response.json();
 

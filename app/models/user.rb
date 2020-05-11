@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :cours_users, dependent: :destroy
-
   has_many :cours, through: :cours_users
 
   validates :username, presence: true, uniqueness: true
