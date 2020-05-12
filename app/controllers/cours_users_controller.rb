@@ -1,9 +1,9 @@
 class CoursUsersController < ApplicationController
   def index
     cours = current_user.cours
-    @hit_cours = cours.where(category: "Histoire").sort { |a, b| a <=> b }
-    @geo_cours = cours.where(category: "Géographie").sort { |a, b| a <=> b }
-    @emc_cours = cours.where(category: "EMC").sort { |a, b| a <=> b }
+    @hit_cours = cours.where(category: "Histoire").sort_by { |cours| cours.name }.reverse
+    @geo_cours = cours.where(category: "Géographie").sort_by { |cours| cours.name }.reverse
+    @emc_cours = cours.where(category: "EMC").sort_by { |cours| cours.name }.reverse
     authorize(:cour_user)
   end
 
