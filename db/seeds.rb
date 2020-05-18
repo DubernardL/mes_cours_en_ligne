@@ -16,7 +16,6 @@ puts "==========================="
 user1 = User.new(username:"Lucas", status:"Admin", password:"azerty", level:"All")
 user1.save!
 
-=begin
 
 user2 = User.new(username:"olili", status:"Elève", level:"2nd", password:"azerty")
 user3 = User.new(username:"bibi", status:"Elève", level:"Terminale", password:"azerty")
@@ -73,7 +72,7 @@ cours_user2.save!
 cours_user3.save!
 
 
-=end
+
 
 puts "==========================="
 puts "OK OK OK !!!"

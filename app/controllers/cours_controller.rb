@@ -69,9 +69,8 @@ class CoursController < ApplicationController
   def download
     name_file = params[:file].split('/').last
     send_file(
-      "#{Rails.root}/public#{params[:file]}.pdf",
-      filename: "#{name_file}.pdf",
-      type: "application/pdf"
+      "#{Rails.root}/public#{params[:file]}.#{params[:format]}",
+      filename: "#{name_file}.#{params[:format]}"
     )
     authorize(:cour)
   end
