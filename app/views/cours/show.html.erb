@@ -34,7 +34,7 @@
   <% if @cours.file.file != nil %>
     <div class="bloc-cours download">
       <h3>Le cours :</h3>
-      <%= link_to download_path(@cours.file), class:'cours-file' do %>
+      <%= link_to cour_download_path(params[:id]), class:'cours-file' do %>
         <i class="fas fa-file-download file-img mr-3"></i>
         <p><%= @cours.name %></p>
       <% end %>
@@ -46,7 +46,7 @@
       <h3>Fichiers supplémentaires : </h3>
       <div class="list-others-files">
         <% @cours.aditional_files.each do |file| %>
-          <%= link_to download_path(file), class:'cours-file others-files' do %>
+          <%= link_to cour_download_aditional_file_path(params[:id], file.identifier), class:'cours-file others-files' do %>
             <i class="fas fa-file-download file-img mr-3"></i>
             <%= file.identifier %>
           <% end %>

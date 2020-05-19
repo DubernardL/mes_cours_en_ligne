@@ -7,8 +7,13 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :new, :create, :destroy]
 
-  get 'download/:file', to: "cours#download", as: 'download'
-  resources :cours
+
+  resources :cours do
+    get 'download', to: "cours#download"
+    get 'download_aditional_file/:file', to: "cours#download_aditional_file", as: 'download_aditional_file'
+  end
+
+
 
   resources :cours_users, only: [:index, :new]
 

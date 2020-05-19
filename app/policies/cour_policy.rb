@@ -36,4 +36,8 @@ class CourPolicy < ApplicationPolicy
   def download?
     true
   end
+
+  def download_aditional_file?
+    true
+  end
 end

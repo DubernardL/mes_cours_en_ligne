@@ -67,11 +67,23 @@ class CoursController < ApplicationController
   end
 
   def download
-    name_file = params[:file].split('/').last
-    send_file(
-      "#{Rails.root}/public#{params[:file]}.#{params[:format]}",
-      filename: "#{name_file}.#{params[:format]}"
-    )
+    file = Cour.find(params[:cour_id]).file
+    data = open(file.url)
+    send_data data.read, type: data.content_type, x_sendfile: true
+    authorize(:cour)
+  end
+
+  def download_aditional_file
+    cour = Cour.find(params[:cour_id]).aditional_files
+    file_identifier = params[:file] + "." + params[:format]
+    aws_file = ""
+    cour.each do |file|
+      if file.identifier === file_identifier
+        aws_file = file
+      end
+    end
+    data = open(aws_file.url)
+    send_data data.read, type: data.content_type, x_sendfile: true
     authorize(:cour)
   end
 
