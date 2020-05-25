@@ -33,7 +33,7 @@
 
   <% if @cours.file.file != nil %>
     <div class="bloc-cours download">
-      <h3>Le cours :</h3>
+      <h3>Cours :</h3>
       <%= link_to cour_download_path(params[:id]), class:'cours-file' do %>
         <i class="fas fa-file-download file-img mr-3"></i>
         <p><%= @cours.name %></p>

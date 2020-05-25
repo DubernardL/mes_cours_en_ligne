@@ -67,9 +67,9 @@ class Form extends Component {
 
   render() {
     return (
-      <div className="general-div">
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor='list-user'>Choisir un utilisateur : </label>
+      <div className="general-div row">
+        <form onSubmit={this.handleSubmit} className="col-sm">
+          <label htmlFor='list-user'>Utilisateur : </label>
           <select id="list-user" onChange={this.handleChange}>
             <option value="">--Choisissez un Utilisateur--</option>
            {
@@ -81,6 +81,7 @@ class Form extends Component {
             }
           </select>
           <br />
+
           <div className="cours-btn">
             <div className="list-cours">
               <h5 className="title-aut">Cours disponibles pour ce niveau :</h5>
@@ -109,19 +110,21 @@ class Form extends Component {
           </div>
         </form>
 
-        <ul className="list-cours-user">
-          <h5 className="title-aut">Cours autorisés pour l'utilisateur :</h5>
-          {
-            this.props.user_cours.map((cours) => {
-              return(
-                <div key={cours.id} className="cours-user-item">
-                  <li>{cours.name}</li>
-                  <button className="delete-btn" value={cours.id} onClick={this.deleteCours}><i className="fas fa-minus-circle"></i></button>
-                </div>
-              )
-            })
-          }
-        </ul>
+        <div className="container col-sm div-cours-user">
+          <ul className="list-cours-user">
+            <h5 className="title-aut">Cours autorisés pour l'utilisateur :</h5>
+            {
+              this.props.user_cours.map((cours) => {
+                return(
+                  <div key={cours.id} className="cours-user-item">
+                    <li>{cours.name}</li>
+                    <button className="delete-btn" value={cours.id} onClick={this.deleteCours}><i className="fas fa-minus-circle"></i></button>
+                  </div>
+                )
+              })
+            }
+          </ul>
+        </div>
       </div>
     );
   }

@@ -16,11 +16,6 @@
   text-decoration: none;
 }
 
-.general-div-footer {
-  display: flex;
-  justify-content: space-around;
-}
-
 .link-footer {
   padding-right: 10px;
   margin-right: 10px;
@@ -49,8 +44,12 @@ body{
 }
 
 footer{
-  height: 60px;
+  height: 100px;
   width: 100%;
   position: absolute;
   bottom: 0;
+}
+
+.site-footer {
+  padding: 20px 30px 0px 30px;
 }
